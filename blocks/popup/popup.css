@@ -1,0 +1,23 @@
+.popup {
+    width: 430px;
+    height: 330px;
+    border-radius: 10px;
+    display: flex;
+    position: fixed;
+    background-color: #fff;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    z-index: 2;
+}
+
+@media screen and (max-width: 550px) {
+    .popup {
+        width: 282px;
+        height: 322px;
+    }
+}
+
+.popup:focus {
+    outline: none;
+}

@@ -1,0 +1,22 @@
+.profile__info_text {
+    display: flex;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 8px;
+}
+
+@media screen and (max-width: 680px) {
+    .profile__info_text {
+        line-height: 20px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .profile__info_text {
+        font-size: 14px;
+        line-height: 17px;
+        width: 100%;
+        justify-content: center;
+    }
+}
