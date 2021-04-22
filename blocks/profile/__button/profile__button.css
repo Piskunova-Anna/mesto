@@ -9,30 +9,30 @@
 }
 
 @media screen and (max-width: 680px) {
-    .profile__info_button {
+    .profile__button {
         width: 22px;
         height: 22px;
     }
 }
 
 @media screen and (max-width: 550px) {
-    .profile__info_button {
+    .profile__button {
         width: 18px;
         height: 18px;
         margin-left: 10px;
     }
 }
 
-.profile__info_button:active {
+.profile__button:active {
     opacity: .6;
     cursor: pointer;
 }
 
-.profile__info_button:hover {
+.profile__button:hover {
     cursor: pointer;
     opacity: .4;
 }
 
-.profile__info_button:focus {
+.profile__button:focus {
     outline: none;
 }

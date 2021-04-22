@@ -1,14 +1,15 @@
 .name {
     margin: auto auto 30px;
     display: flex;
-    border-bottom: 1px solid #000;
-    opacity: .2;
     width: 358px;
     color: #000;
     font-size: 14px;
     line-height: 17px;
     padding-bottom: 13px;
     cursor: text;
+    padding: 0;
+    border-width: 0;
+    border-bottom: 1px solid #808080;
 }
 
 @media screen and (max-width: 550px) {

@@ -8,4 +8,5 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    font-weight: 900;
 }
