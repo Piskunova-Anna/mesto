@@ -2,6 +2,6 @@
     display: flex;
     background-color: #fff;
     width: 282px;
-    height: 79px;
+    min-height: 79px;
     border-radius: 0 0 10px 10px;
 }

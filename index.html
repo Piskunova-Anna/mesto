@@ -18,59 +18,63 @@
     <main>
         <section class="profile">
             <img src="./images/kusto.png" alt="Жак-Ив Кусто" class="profile__kusto">
-            <ul class="profile__info">
-                <p class="profile__name">Жак-Ив Кусто</p>
+            <div class="profile__info">
+                <h1 class="profile__name">Жак-Ив Кусто</h1>
                 <button type="button" class="profile__button"><img src="./images/edit_button.svg" alt="изменить текст"></button>
                 <li class="profile__text">Исследователь океана</li>
-            </ul>
-            <button class="profile__add-button" type="button"><img src = "./images/add_button.svg" alt = "добавить карточку"></button>
+            </div>
+            <button class="profile__add-button" type="button"></button>
         </section>
         <section class="cards-grid">
             <article class="cards-grid__card"><img src="./images/karachaevsk.png" alt="Карачаевск" class="cards-grid__image">
                 <div class="cards-grid__container">
-                    <p class="cards-grid__text">Карачаевск</p><button class="cards-grid__like"></button>
+                    <h2 class="cards-grid__text">Карачаевск</h2><button class="cards-grid__like" type="button"></button>
                 </div>
             </article>
             <article class="cards-grid__card"><img src="./images/elbrus.png" alt="Эльбрус" class="cards-grid__image">
                 <div class="cards-grid__container">
-                    <p class="cards-grid__text">Эльбрус</p><button class="cards-grid__like"></button>
+                    <h2 class="cards-grid__text">Эльбрус</h2><button class="cards-grid__like" type="button"></button>
                 </div>
             </article>
             <article class="cards-grid__card"><img src="./images/dombai.png" alt="Домбай" class="cards-grid__image">
                 <div class="cards-grid__container">
-                    <p class="cards-grid__text">Домбай</p><button class="cards-grid__like"></button>
+                    <h2 class="cards-grid__text">Домбай</h2><button class="cards-grid__like" type="button"></button>
                 </div>
             </article>
             <article class="cards-grid__card"><img src="./images/elbrus.png" alt="Эльбрус" class="cards-grid__image">
                 <div class="cards-grid__container">
-                    <p class="cards-grid__text">Эльбрус</p><button class="cards-grid__like"></button>
+                    <h2 class="cards-grid__text">Эльбрус</h2><button class="cards-grid__like" type="button"></button>
                 </div>
             </article>
             <article class="cards-grid__card"><img src="./images/dombai.png" alt="Домбай" class="cards-grid__image">
                 <div class="cards-grid__container">
-                    <p class="cards-grid__text">Домбай</p><button class="cards-grid__like"></button>
+                    <h2 class="cards-grid__text">Домбай</h2><button class="cards-grid__like" type="button"></button>
                 </div>
             </article>
             <article class="cards-grid__card"><img src="./images/karachaevsk.png" alt="Карачаево-Черкессия" class="cards-grid__image">
                 <div class="cards-grid__container">
-                    <p class="cards-grid__text">Карачаево-Черкессия</p><button class="cards-grid__like"></button>
+                    <h2 class="cards-grid__text">Карачаево-Черкессия</h2><button class="cards-grid__like" type="button"></button>
                 </div>
             </article>
         </section>
-        <footer class="footer">
-            © 2020 Mesto Russia
-        </footer>
     </main>
-    <article class="popup">
-        <form class="popup__container" name="форма">
+    <footer>
+        <p class="footer">
+            © 2020 Mesto Russia
+        </p>
+    </footer>
+    <section class="popup">
+        <div class="popup__container">
             <h2 class="popup__heading">Редактировать профиль</h2>
-            <input type="text" placeholder="Жак-Ив Кусто" name="Имя" class="name">
-            <input type="text" placeholder="Исследователь океана" name="Текст" class="text">
-            <input type="submit" name="Сохранить" value="Сохранить" class="popup__button">
-            <button class="popup__close-icon" type="button"><img src = "./images/close_icon.svg" alt = "закрыть"></button>
-        </form>
-    </article>
-    <script src="./scripts/script.js"></script>
+            <form name="form">
+                <input type="text" placeholder="Жак-Ив Кусто" name="name" class="popup__name_edit_profile">
+                <input type="text" placeholder="Исследователь океана" name="text" class="popup__text_edit_profile">
+                <input type="submit" value="Сохранить" class="popup__button">
+            </form>
+            <button class="popup__close-icon" type="button"></button>
+        </div>
+    </section>
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>

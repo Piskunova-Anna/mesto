@@ -1,8 +1,12 @@
 .profile__text {
-    display: flex;
+    display: block;
     font-size: 18px;
     line-height: 22px;
     margin-top: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
 }
 
 @media screen and (max-width: 680px) {

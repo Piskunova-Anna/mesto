@@ -1,19 +1,22 @@
 .profile__add-button {
-    background-color: black;
+    background-color: #000;
     border-width: 0;
     padding: 0;
     display: flex;
     align-items: center;
-    background: black;
     margin-left: auto;
     transition: opacity .5s linear 0s;
+    background: url(../../../images/add_button.svg) no-repeat;
+    background-size: contain;
+    height: 50px;
 }
 
 @media screen and (max-width: 550px) {
     .profile__add-button {
-        width: 100%;
+        width: 282px;
         margin-top: 36px;
         justify-content: center;
+        background: url(../../../images/add_button_mobile.svg) no-repeat;
     }
 }
 
@@ -24,7 +27,7 @@
 
 .profile__add-button:hover {
     cursor: pointer;
-    opacity: .5;
+    opacity: .6;
 }
 
 .profile__add-button:focus {

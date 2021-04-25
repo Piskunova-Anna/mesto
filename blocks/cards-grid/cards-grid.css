@@ -26,6 +26,5 @@
     .cards-grid {
         grid-template-rows: repeat(6, 361px);
         grid-template-columns: 282px;
-        row-gap: 20px;
     }
 }

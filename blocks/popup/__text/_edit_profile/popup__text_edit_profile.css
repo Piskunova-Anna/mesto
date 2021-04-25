@@ -1,8 +1,9 @@
-.name {
-    margin: auto auto 30px;
+.popup__text_edit_profile {
+    margin: 0 auto 48px;
     display: flex;
     width: 358px;
     color: #000;
+    text-align: start;
     font-size: 14px;
     line-height: 17px;
     padding-bottom: 13px;
@@ -13,7 +14,8 @@
 }
 
 @media screen and (max-width: 550px) {
-    .name {
+    .popup__text_edit_profile {
         width: 238px;
+        margin: 0 auto 45px;
     }
 }

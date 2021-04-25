@@ -5,18 +5,20 @@
     top: -40px;
     right: -40px;
     width: 40px;
-    background: transparent;
+    height: 40px;
     cursor: pointer;
     border: none;
     padding: 0;
     transition: opacity .5s linear 0s;
+    background: url(../../../images/close_icon.svg) no-repeat;
+    background-size: contain;
 }
 
 @media screen and (max-width: 550px) {
     .popup__close-icon {
         width: 26px;
-        top: -26px;
-        right: -26px;
+        height: 26px;
+        right: -1px;
     }
 }
 
