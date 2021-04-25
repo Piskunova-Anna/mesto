@@ -1,4 +1,4 @@
-.popup__text_edit_profile {
+.popup__text {
     margin: 0 auto 48px;
     display: flex;
     width: 358px;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 550px) {
-    .popup__text_edit_profile {
+    .popup__text {
         width: 238px;
         margin: 0 auto 45px;
     }

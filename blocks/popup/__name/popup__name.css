@@ -1,4 +1,4 @@
-.popup__name_edit_profile {
+.popup__name {
     margin: auto auto 30px;
     display: flex;
     width: 358px;
@@ -13,7 +13,7 @@
 }
 
 @media screen and (max-width: 550px) {
-    .popup__name_edit_profile {
+    .popup__name {
         width: 238px;
     }
 }
