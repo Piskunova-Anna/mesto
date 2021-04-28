@@ -6,6 +6,9 @@
     width: 24px;
     height: 24px;
     transition: opacity .5s linear 0s;
+    background: url(../../../images/edit_button.svg) no-repeat;
+    background-size: contain;
+    align-self: center;
 }
 
 @media screen and (max-width: 680px) {
