@@ -9,6 +9,7 @@
     background: url(../../../images/add_button.svg) no-repeat;
     background-size: contain;
     height: 50px;
+    width: 150px;
 }
 
 @media screen and (max-width: 550px) {
