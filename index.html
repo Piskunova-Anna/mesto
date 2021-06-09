@@ -27,44 +27,22 @@
             <button class="profile__add-button" type="button"></button>
         </section>
         <section class="cards-grid">
-            <article class="cards-grid__card"><img src="./images/karachaevsk.png" alt="Карачаевск" class="cards-grid__image">
-                <div class="cards-grid__container">
-                    <h2 class="cards-grid__text">Карачаевск</h2><button class="cards-grid__like" type="button"></button>
-                </div>
-            </article>
-            <article class="cards-grid__card"><img src="./images/elbrus.png" alt="Эльбрус" class="cards-grid__image">
-                <div class="cards-grid__container">
-                    <h2 class="cards-grid__text">Эльбрус</h2><button class="cards-grid__like" type="button"></button>
-                </div>
-            </article>
-            <article class="cards-grid__card"><img src="./images/dombai.png" alt="Домбай" class="cards-grid__image">
-                <div class="cards-grid__container">
-                    <h2 class="cards-grid__text">Домбай</h2><button class="cards-grid__like" type="button"></button>
-                </div>
-            </article>
-            <article class="cards-grid__card"><img src="./images/elbrus.png" alt="Эльбрус" class="cards-grid__image">
-                <div class="cards-grid__container">
-                    <h2 class="cards-grid__text">Эльбрус</h2><button class="cards-grid__like" type="button"></button>
-                </div>
-            </article>
-            <article class="cards-grid__card"><img src="./images/dombai.png" alt="Домбай" class="cards-grid__image">
-                <div class="cards-grid__container">
-                    <h2 class="cards-grid__text">Домбай</h2><button class="cards-grid__like" type="button"></button>
-                </div>
-            </article>
-            <article class="cards-grid__card"><img src="./images/karachaevsk.png" alt="Карачаево-Черкессия" class="cards-grid__image">
-                <div class="cards-grid__container">
-                    <h2 class="cards-grid__text">Карачаево-Черкессия</h2><button class="cards-grid__like" type="button"></button>
-                </div>
-            </article>
+
         </section>
+        <template class = "new-card">
+            <article class="cards-grid__card"><img src="" alt="" class="cards-grid__image">
+                <div class="cards-grid__container">
+                    <h2 class="cards-grid__text"></h2><button class="cards-grid__like" type="button"></button>
+                </div>
+            </article>
+        </template>
     </main>
     <footer>
         <p class="footer">
             © 2020 Mesto Russia
         </p>
     </footer>
-    <section class="popup">
+    <section class="popup popup_profile">
         <div class="popup__container">
             <h2 class="popup__heading">Редактировать профиль</h2>
             <form name="form" class="popup__form">
@@ -72,7 +50,18 @@
                 <input type="text" placeholder="Исследователь океана" name="text" class="popup__text popup__text_edit_profile">
                 <input type="submit" value="Сохранить" class="popup__button">
             </form>
-            <button class="popup__close-icon" type="button"></button>
+            <button class="popup__close-icon popup_close-profile" type="button"></button>
+        </div>
+    </section>
+    <section class="popup popup_card">
+        <div class="popup__container">
+            <h2 class="popup__heading">Новое место</h2>
+            <form name="form" class="popup__form">
+                <input type="text" placeholder="Название" name="name" class="popup__name popup__name_card">
+                <input type="text" placeholder="Ссылка на картинку" name="link" class="popup__text popup__text_card">
+                <input type="submit" value="Сохранить" class="popup__button popup__button_card">
+            </form>
+            <button class="popup__close-icon popup_close-card" type="button"></button>
         </div>
     </section>
     <script src="./scripts/index.js"></script>
