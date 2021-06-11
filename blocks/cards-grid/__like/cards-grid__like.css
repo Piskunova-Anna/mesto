@@ -18,7 +18,3 @@
 .cards-grid__like:focus {
     outline: none;
 }
-
-.cards-grid__like:active {
-    background: url(../../../images/like_active.svg) no-repeat;
-}

@@ -83,7 +83,19 @@ const initialCards = [
       newCard.querySelector('.cards-grid__image').src = element.link;
       newCard.querySelector('.cards-grid__text').textContent = element.name;
 
-      cardsGrid.append(newCard)
+      newCard.querySelector('.cards-grid__like').addEventListener('click', function(evt){
+        evt.target.classList.toggle('cards-grid__like_active');
+      })
+
+      newCard.querySelector('.cards-grid__trash-bin').addEventListener('click', cardDelete);
+
+      cardsGrid.prepend(newCard)
+  }
+
+  //функция удаления карточки
+  function cardDelete (evt){
+    const deleteCard = evt.target.closest('.cards-grid__card');
+    deleteCard.remove();
   }
 
   //перебор массива
@@ -92,15 +104,19 @@ const initialCards = [
     });
  
 //функция добавления карточки на страницу из попапа
-   const addBtnCard = document.querySelector('.popup__button_card');
-  addBtnCard.addEventListener('submit', function(evt){
-      evt.preventDefault();
-      const popupNameCard = document.querySelector('.popup__name_card');
-      const popupTextCard = document.querySelector('.popup__text_card');
+  const popupFormCard = document.querySelector('.popup__form_card');
 
-      createNewCard(popupNameCard, popupTextCard);
-
-      popupNameCard.value = '';
-      popupTextCard.value = '';
+  function addNewCard (evt) {
+    evt.preventDefault();
+    const popupNameCard = document.querySelector('.popup__name_card');
+    const popupTextCard = document.querySelector('.popup__text_card');
+    const nameCard = popupNameCard.value;
+    const image = popupTextCard.value;
+    const cardInfo = {
+        name: nameCard,
+        link: image
+      }
+      createNewCard(cardInfo);
       closePopup(popupCard);
-  })
+  }
+  popupFormCard.addEventListener('submit', addNewCard);

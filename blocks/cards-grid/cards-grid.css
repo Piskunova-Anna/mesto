@@ -2,12 +2,12 @@
     display: grid;
     margin-top: 51px;
     justify-content: center;
+    grid-template-rows: 361px;
 }
 
 @media screen and (min-width: 901px) {
     .cards-grid {
         grid-template-columns: repeat(3, 282px);
-        grid-template-rows: repeat(2, 361px);
         row-gap: 20px;
         column-gap: 17px;
     }
@@ -16,7 +16,6 @@
 @media screen and (max-width: 900px) {
     .cards-grid {
         grid-template-columns: repeat(2, 282px);
-        grid-template-rows: repeat(3, 361px);
         row-gap: 20px;
         column-gap: 17px;
     }
@@ -24,7 +23,6 @@
 
 @media screen and (max-width: 650px) {
     .cards-grid {
-        grid-template-rows: repeat(6, 361px);
         grid-template-columns: 282px;
     }
 }
