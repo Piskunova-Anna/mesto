@@ -46,10 +46,10 @@
     <section class="popup popup_profile">
         <div class="popup__container">
             <h2 class="popup__heading">Редактировать профиль</h2>
-            <form name="form" class="popup__form">
-                <input type="text" placeholder="Жак-Ив Кусто" name="name" class="popup__name popup__name_edit_profile">
-                <input type="text" placeholder="Исследователь океана" name="text" class="popup__text popup__text_edit_profile">
-                <input type="submit" value="Сохранить" class="popup__button">
+            <form name="form" class="popup__form popup__form_profile">
+                <input type="text" required placeholder="Жак-Ив Кусто" name="name" class="popup__name popup__name_edit_profile">
+                <input type="text" required placeholder="Исследователь океана" name="text" class="popup__text popup__text_edit_profile">
+                <button type="submit" value="Сохранить" class="popup__button">Сохранить</button>
             </form>
             <button class="popup__close-icon popup__close-profile" type="button"></button>
         </div>
@@ -57,10 +57,10 @@
     <section class="popup popup_card">
         <div class="popup__container">
             <h2 class="popup__heading">Новое место</h2>
-            <form name="form" class="popup__form popup__form_card">
-                <input type="text" placeholder="Название" name="name" class="popup__name popup__name_card">
-                <input type="text" placeholder="Ссылка на картинку" name="link" class="popup__text popup__text_card">
-                <input type="submit" value="Сохранить" class="popup__button popup__button_card">
+            <form name="form__card" class="popup__form popup__form_card">
+                <input type="text" required placeholder="Название" name="name__card" class="popup__name popup__name_card">
+                <input type =  "url" required placeholder="Ссылка на картинку" name="link" class="popup__text popup__text_card">
+                <button type="submit" value="Сохранить" class="popup__button popup__button_card">Сохранить</button>
             </form>
             <button class="popup__close-icon popup__close-card" type="button"></button>
         </div>
