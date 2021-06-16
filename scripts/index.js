@@ -120,7 +120,7 @@ const initialCards = [
 
   
     //функция открытия изображения
-    const popupImage = document.querySelector('.popup__image');
+    const popupImage = document.querySelector('.popup_image');
     const popupFullImage = document.querySelector('.popup__full-image');
     const popupTextImage = document.querySelector('.popup__image-name');
     
@@ -133,8 +133,8 @@ const initialCards = [
 
     const profileButton = document.querySelector('.profile__button');
     const profileAddButton = document.querySelector('.profile__add-button');
-    const popupCloseProfile = document.querySelector('.popup_close-profile');
-    const popupCloseCard = document.querySelector('.popup_close-card');
+    const popupCloseProfile = document.querySelector('.popup__close-profile');
+    const popupCloseCard = document.querySelector('.popup__close-card');
     const popupForm = document.querySelector('.popup__form');
     const popupCloseFullscreen = document.querySelector('.popup__close-icon_fullscreen');
     profileButton.addEventListener('click', openPopupProfile);
