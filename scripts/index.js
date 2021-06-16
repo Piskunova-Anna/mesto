@@ -32,7 +32,7 @@ function editForm(evt) {
     evt.preventDefault();
     profileName.textContent = popupName.value;
     profileText.textContent = text.value;
-    closePopup(popup);
+    closePopup(popupProfile);
 }
 
 const initialCards = [
