@@ -9,6 +9,7 @@
     align-self: center;
     justify-self: center;
     z-index: 11;
+    transition: opacity .9s linear 0s;
 }
 
 @media screen and (max-width: 550px) {
