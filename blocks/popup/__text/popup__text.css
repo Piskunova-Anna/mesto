@@ -19,7 +19,3 @@
         margin: 0 auto 45px;
     }
 }
-
-.popup__text:invalid {
-    border-bottom: 1px solid red;
-}

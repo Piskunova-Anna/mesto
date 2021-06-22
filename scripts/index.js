@@ -1,6 +1,8 @@
 //функция открытия попапа
 function openPopup(popup) {
     popup.classList.add('popup_opened');
+    document.addEventListener('keydown', closePopupEsc);
+    document.addEventListener('mousedown', closePopupOverlay);
     }
 
 //функция открытия редактирования профиля
@@ -12,7 +14,10 @@ function openPopupProfile(){
 
 //функция открытия редактирования карточки
 function openPopupCard() {
+    popupNameCard.value = '';
+    popupTextCard.value = '';
     openPopup(popupCard);
+    enableValidation(config);
 }
 
 //функция редактирования формы
@@ -21,12 +26,13 @@ function editForm(evt) {
     profileName.textContent = popupName.value;
     profileText.textContent = text.value;
     closePopup(popupProfile);
-
 }
 
 //функция закрытия попапа
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEsc);
+  document.removeEventListener('mousedown', closePopupOverlay);
 }
 
 //функция добавления карточек на страницу

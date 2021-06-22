@@ -5,5 +5,3 @@ popupCloseProfile.addEventListener('click', () => closePopup(popupProfile));
 popupCloseCard.addEventListener('click', () => closePopup(popupCard));
 popupFormProfile.addEventListener('submit', editForm);
 popupCloseFullscreen.addEventListener('click', () => closePopup(popupImage));
-document.addEventListener('keydown', closePopupEsc);
-document.addEventListener('click', closePopupOverlay);

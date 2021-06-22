@@ -19,5 +19,4 @@ const popupCloseCard = document.querySelector('.popup__close-card');
 const popupFormProfile = document.querySelector('.popup__form_profile');
 const popupCloseFullscreen = document.querySelector('.popup__close-icon_fullscreen');
 const popupButtonProfile = document.querySelector('.popup__button_profile');
-const nameInput = popupFormProfile.querySelector(`.${popupName.id}-error`);
-const textInput = popupFormProfile.querySelector(`.${text.id}-error`);
+const popupButtonCard = document.querySelector('.popup__button_card');
