@@ -1,5 +1,5 @@
 .popup__name {
-    margin: auto auto 30px;
+    margin: auto auto 5px;
     display: flex;
     width: 358px;
     color: #000;
@@ -16,4 +16,8 @@
     .popup__name {
         width: 238px;
     }
+}
+
+.popup__name:invalid {
+    border-bottom: 1px solid red;
 }

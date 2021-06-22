@@ -15,17 +15,18 @@ function openPopupCard() {
     openPopup(popupCard);
 }
 
-//функция закрытия попапа
-function closePopup(popup) {
-    popup.classList.remove('popup_opened');
-}
-
 //функция редактирования формы
 function editForm(evt) {
     evt.preventDefault();
     profileName.textContent = popupName.value;
     profileText.textContent = text.value;
     closePopup(popupProfile);
+
+}
+
+//функция закрытия попапа
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
 }
 
 //функция добавления карточек на страницу
