@@ -20,3 +20,5 @@ const popupFormProfile = document.querySelector('.popup__form_profile');
 const popupCloseFullscreen = document.querySelector('.popup__close-icon_fullscreen');
 const popupButtonProfile = document.querySelector('.popup__button_profile');
 const popupButtonCard = document.querySelector('.popup__button_card');
+const popupInputProfile = document.querySelector('.popup__input_profile');
+const popupInputCard = document.querySelector('.popup__input_card');

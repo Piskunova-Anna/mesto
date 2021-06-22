@@ -7,6 +7,7 @@ function openPopup(popup) {
 
 //функция открытия редактирования профиля
 function openPopupProfile(){
+    hideInputError(popupFormProfile, popupInputProfile);
     openPopup(popupProfile);
     popupName.value = profileName.textContent;
     text.value = profileText.textContent;
@@ -16,6 +17,7 @@ function openPopupProfile(){
 function openPopupCard() {
     popupNameCard.value = '';
     popupTextCard.value = '';
+    hideInputError(popupFormCard, popupInputCard);
     openPopup(popupCard);
     enableValidation(config);
 }
