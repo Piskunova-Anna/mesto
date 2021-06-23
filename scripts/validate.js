@@ -34,8 +34,8 @@ const isValid = (formElement, inputElement, config) => {
 
 //слушатель живой проверки валидации
 const setEventListeners = (formElement, config) => {
-    const inputList = Array.from(formElement.querySelectorAll(config.inputElement));
-    const submitButton = document.querySelector(config.submitButtonSelector);
+    const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+    const submitButton = formElement.querySelector(config.submitButtonSelector);
 
     toggleButtonState(inputList, submitButton, config);
     inputList.forEach((inputElement) => {
@@ -67,7 +67,7 @@ const toggleButtonState = (inputList, submitButton, config) => {
 }
 
 const enableValidation = (config) => {
-     const formList = Array.from(document.querySelectorAll(config.formElement));
+     const formList = Array.from(document.querySelectorAll(config.formSelector));
 
     formList.forEach((formElement) => {
         formElement.addEventListener('submit', (evt) => {
