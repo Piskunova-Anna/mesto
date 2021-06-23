@@ -7,7 +7,7 @@ function openPopup(popup) {
 
 //функция открытия редактирования профиля
 function openPopupProfile(){
-    hideInputError(popupFormProfile, popupInputProfile);
+    hideInputError(popupFormProfile, popupInputProfile, configurate);
     openPopup(popupProfile);
     popupName.value = profileName.textContent;
     text.value = profileText.textContent;
@@ -17,9 +17,10 @@ function openPopupProfile(){
 function openPopupCard() {
     popupNameCard.value = '';
     popupTextCard.value = '';
-    hideInputError(popupFormCard, popupInputCard);
+    hideInputError(popupFormCard, popupInputCard, configurate);
     openPopup(popupCard);
-    enableValidation(config);
+    popupButtonCard.disabled = 'true';
+    popupButtonCard.classList.add('popup__button_disabled');
 }
 
 //функция редактирования формы
