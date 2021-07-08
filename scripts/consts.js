@@ -5,7 +5,6 @@ const profileText = document.querySelector('.profile__text');
 const popupProfile = document.querySelector('.popup_profile');
 const popupCard = document.querySelector('.popup_card');
 const cardsGrid = document.querySelector('.cards-grid');
-const cardTemplate = document.querySelector('.new-card').content;
 const popupFormCard = document.querySelector('.popup__form_card');
 const popupNameCard = document.querySelector('.popup__name_card');
 const popupTextCard = document.querySelector('.popup__text_card');
@@ -18,7 +17,11 @@ const popupCloseProfile = document.querySelector('.popup__close-profile');
 const popupCloseCard = document.querySelector('.popup__close-card');
 const popupFormProfile = document.querySelector('.popup__form_profile');
 const popupCloseFullscreen = document.querySelector('.popup__close-icon_fullscreen');
-const popupButtonProfile = document.querySelector('.popup__button_profile');
 const popupButtonCard = document.querySelector('.popup__button_card');
 const popupInputProfile = document.querySelector('.popup__input_profile');
 const popupInputCard = document.querySelector('.popup__input_card');
+
+export {popupName, text, profileName, profileText, popupProfile, popupCard, cardsGrid,
+popupFormCard, popupNameCard, popupTextCard, popupImage, popupFullImage, popupTextImage, profileButton,
+profileAddButton, popupCloseProfile, popupCloseCard, popupFormProfile, popupCloseFullscreen, popupButtonCard,
+popupInputProfile, popupInputCard};
