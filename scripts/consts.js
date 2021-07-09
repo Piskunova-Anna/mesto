@@ -20,8 +20,9 @@ const popupCloseFullscreen = document.querySelector('.popup__close-icon_fullscre
 const popupButtonCard = document.querySelector('.popup__button_card');
 const popupInputProfile = document.querySelector('.popup__input_profile');
 const popupInputCard = document.querySelector('.popup__input_card');
+const popupInput = document.querySelector('.popup__input');
 
 export {popupName, text, profileName, profileText, popupProfile, popupCard, cardsGrid,
 popupFormCard, popupNameCard, popupTextCard, popupImage, popupFullImage, popupTextImage, profileButton,
 profileAddButton, popupCloseProfile, popupCloseCard, popupFormProfile, popupCloseFullscreen, popupButtonCard,
-popupInputProfile, popupInputCard};
+popupInputProfile, popupInputCard, popupInput};

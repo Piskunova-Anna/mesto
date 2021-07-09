@@ -1,8 +1,8 @@
 import {initialCards} from './initial-cards.js';
-import {hideInputError, configurate} from './FormValidator.js';
+import {FormValidator, configurate} from './FormValidator.js';
 import {popupName, text, profileName, profileText, popupProfile, popupCard, popupFormCard, popupNameCard,
   popupTextCard, popupImage, profileButton, profileAddButton, popupCloseProfile, popupCloseCard,
-  popupFormProfile, popupCloseFullscreen, popupButtonCard, popupInputProfile, popupInputCard, cardsGrid} from './consts.js';
+  popupFormProfile, popupCloseFullscreen, popupButtonCard, cardsGrid, popupInputProfile, popupInputCard} from './consts.js';
 import {Card} from './Card.js';
 
       //перебор массива
@@ -38,7 +38,8 @@ export function openPopup(popup) {
 
 //функция открытия редактирования профиля
 function openPopupProfile(){
-  hideInputError(popupFormProfile, popupInputProfile, configurate);
+  const popupProfileValidate = new FormValidator(configurate, popupFormProfile);
+  popupProfileValidate.hideInputError(popupInputProfile);
   openPopup(popupProfile);
   popupName.value = profileName.textContent;
   text.value = profileText.textContent;
@@ -48,7 +49,8 @@ function openPopupProfile(){
 function openPopupCard() {
   popupNameCard.value = '';
   popupTextCard.value = '';
-  hideInputError(popupFormCard, popupInputCard, configurate);
+  const popupCardValidate = new FormValidator(configurate, popupFormCard);
+  popupCardValidate.hideInputError(popupInputCard);
   openPopup(popupCard);
   popupButtonCard.disabled = 'true';
   popupButtonCard.classList.add('popup__button_disabled');
