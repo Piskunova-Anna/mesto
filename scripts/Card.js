@@ -1,5 +1,5 @@
-import { popupFullImage, popupTextImage, popupImage } from './consts.js';
-import { openPopup } from './index.js';
+import { popupFullImage, popupImage, fullName } from '../src/index.js';
+import { PopupWithImage } from './PopupWithImage.js';
 
 export class Card {
     constructor(data, cardSelector) {
@@ -51,9 +51,7 @@ export class Card {
     }
 
     _openFullImage() {
-        popupFullImage.src = this._element.querySelector('.cards-grid__image').src;
-        popupFullImage.alt = this._element.querySelector('.cards-grid__image').textContent;
-        popupTextImage.textContent = this._element.querySelector('.cards-grid__text').textContent;
-        openPopup(popupImage);
+        const openImage = new PopupWithImage(popupImage, popupFullImage, fullName);
+        openImage.open({ name: this._text, link: this._image });
     }
 }
