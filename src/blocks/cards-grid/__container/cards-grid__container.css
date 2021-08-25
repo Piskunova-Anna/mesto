@@ -1,0 +1,7 @@
+.cards-grid__container {
+    display: flex;
+    background-color: #fff;
+    width: 282px;
+    min-height: 79px;
+    border-radius: 0 0 10px 10px;
+}

@@ -1,0 +1,20 @@
+.cards-grid__like {
+    margin-right: 20px;
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    background: url(../../../images/like.svg) no-repeat;
+    width: 22px;
+    height: 19px;
+    display: flex;
+    align-self: center;
+}
+
+.cards-grid__like:hover {
+    opacity: 0.5;
+}
+
+.cards-grid__like:focus {
+    outline: none;
+}

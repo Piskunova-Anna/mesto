@@ -1,0 +1,6 @@
+.popup__full-image{
+    max-height: 75vh;
+    max-width: 75vw;
+    z-index: 20;
+    object-fit: contain;
+}

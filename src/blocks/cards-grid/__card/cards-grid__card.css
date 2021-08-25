@@ -1,0 +1,6 @@
+.cards-grid__card {
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    position: relative;
+}

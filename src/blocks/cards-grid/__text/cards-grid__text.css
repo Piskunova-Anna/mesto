@@ -1,0 +1,14 @@
+.cards-grid__text {
+    line-height: 29px;
+    font-size: 24px;
+    max-width: 200px;
+    margin-left: 21px;
+    color: #000;
+    background-color: transparent;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 900;
+    vertical-align: middle;
+    margin: auto 0 auto 21px;
+}

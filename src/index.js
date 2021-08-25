@@ -1,15 +1,15 @@
-import { Popup } from '../scripts/Popup.js';
-import { ValidationConfig, FormValidator } from '../scripts/FormValidator.js';
-import { PopupWithForm } from '../scripts/PopupWithForm.js';
-import { UserInfo } from '../scripts/UserInfo.js';
+import { Popup } from './scripts/Popup.js';
+import { ValidationConfig, FormValidator } from './scripts/FormValidator.js';
+import { PopupWithForm } from './scripts/PopupWithForm.js';
+import { UserInfo } from './scripts/UserInfo.js';
 export {
   popupFullImage, popupTextImage, popupImage, popupCloseIcon, profileName, profileText, popupForm,
   imageCard, textCard, popup, fullName
 };
-import { Section } from '../scripts/Section.js';
-import { Card } from '../scripts/Card.js';
-import { initialCards } from '../scripts/initial-cards.js';
-import '../pages/index.css';
+import { Section } from './scripts/Section.js';
+import { Card } from './scripts/Card.js';
+import { initialCards } from './scripts/initial-cards.js';
+import './pages/index.css';
 
 const popupFullImage = document.querySelector('.popup__full-image');
 const popupTextImage = document.querySelector('.popup__text-image');
