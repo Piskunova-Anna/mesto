@@ -6,7 +6,7 @@ export class Section {
     }
 
     addItem(element) {
-        this._cardsGrid.append(element);
+        this._cardsGrid.prepend(element);
     }
 
     renderItems() {

@@ -1,12 +1,10 @@
-import { popupFullImage, popupImage, fullName } from '../pages/index.js';
-import { PopupWithImage } from './PopupWithImage.js';
-
 export class Card {
-    constructor(data, cardSelector) {
+    constructor(handleCardClick, data, cardSelector) {
         this._text = data.name;
         this._image = data.link;
         this._alt = data.name;
         this._cardSelector = cardSelector;
+        this._openFullImage = handleCardClick;
     }
 
     _getTemplate() {
@@ -38,7 +36,7 @@ export class Card {
             this._deleteCard();
         });
         this._element.querySelector('.cards-grid__image').addEventListener('click', () => {
-            this._openFullImage();
+            this._openFullImage.open({name: this._text, link: this._image});
         });
     }
 
@@ -48,10 +46,5 @@ export class Card {
 
     _deleteCard() {
         this._element.closest('.cards-grid__card').remove();
-    }
-
-    _openFullImage() {
-        const openImage = new PopupWithImage(popupImage, popupFullImage, fullName);
-        openImage.open({ name: this._text, link: this._image });
     }
 }

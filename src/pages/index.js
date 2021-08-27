@@ -1,76 +1,50 @@
-import { Popup } from '../components/Popup.js';
-import { ValidationConfig, FormValidator } from '../components/FormValidator.js';
+import { FormValidator } from '../components/FormValidator.js';
 import { PopupWithForm } from '../components/PopupWithForm.js';
 import { UserInfo } from '../components/UserInfo.js';
-export {
-  popupFullImage, popupTextImage, popupImage, popupCloseIcon, profileName, profileText, popupForm,
-  imageCard, textCard, popup, fullName
-};
 import { Section } from '../components/Section.js';
 import { Card } from '../components/Card.js';
-import { initialCards } from '../components/initial-cards.js';
+import { initialCards } from '../utils/initial-cards.js';
 import './index.css';
+import { PopupWithImage } from '../components/PopupWithImage.js';
+import { validationConfig, popupFullImage, popupImage, popupProfile, popupCard, profileButton, cardButton,
+  popupFormProfile, popupFormCard, popupName, popupText, cardsGrid, fullName } from '../utils/constants.js';
 
-const popupFullImage = document.querySelector('.popup__full-image');
-const popupTextImage = document.querySelector('.popup__text-image');
-const popupImage = document.querySelector('.popup_image');
-const popupProfile = document.querySelector('.popup_profile');
-const popupCard = document.querySelector('.popup_card');
-const popupCloseIcon = document.querySelector('.popup__close-icon');
-const profileName = document.querySelector('.profile__name');
-const profileText = document.querySelector('.profile__text');
-const profileButton = document.querySelector('.profile__button');
-const cardButton = document.querySelector('.profile__add-button');
-const popupFormProfile = document.querySelector('.popup__form_profile');
-const popupFormCard = document.querySelector('.popup__form_card');
-const popupForm = document.querySelector('.popup__form');
-const popupName = document.querySelector('.popup__name');
-const popupText = document.querySelector('.popup__text');
-const cardsGrid = document.querySelector('.cards-grid');
-const imageCard = document.querySelector('.cards-grid__image');
-const textCard = document.querySelector('.cards-grid__text');
-const popup = document.querySelector('.popup');
-const fullName = document.querySelector('.popup__image-name');
+const openImage = new PopupWithImage(popupImage, popupFullImage, fullName);
+function cardRenderer (item){
+const card = new Card(openImage, item, '.new-card');
+const generateCard = card.generateCard();
+section.addItem(generateCard);
+}
 
-const section = new Section({
-  items: initialCards,
-  renderer: (item) => {
-    const card = new Card(item, '.new-card');
-    const generateCard = card.generateCard();
-    section.addItem(generateCard);
-  }
-}, cardsGrid);
+//рендер карточек
+const section = new Section({items: initialCards, renderer: (item) => {cardRenderer(item)}}, cardsGrid);
 
 section.renderItems();
 
+//фукнция открытия открытия попапа редактирования карточки
+const popupWithCard = new PopupWithForm({submitForm: (item) => {cardRenderer(item)}}, popupCard);
+
+//функция вставки данных в форму редактирования профиля
 const userInfo = new UserInfo(popupName, popupText);
-const openProfile = new Popup(popupProfile);
 profileButton.addEventListener('click', () => {
-  openProfile.open();
+  popupWithForm.open();
   userInfo.getUserInfo();
 })
 
-const openCard = new Popup(popupCard);
+//функция открытия попапа
 cardButton.addEventListener('click', () => {
-  openCard.open();
+  popupWithCard.open();
 })
 
+//функция открытия попапа редактирования профиля
 const popupWithForm = new PopupWithForm({ submitForm: () => userInfo.setUserInfo() }, popupProfile);
-
-const popupWithCard = new PopupWithForm({
-  submitForm: (item) => {
-    const newCard = new Card(item, '.new-card');
-    const renderCard = newCard.generateCard();
-    section.addItem(renderCard);
-  }
-}, popupCard);
 
 
 popupWithCard.setEventListeners();
 popupWithForm.setEventListeners();
 
 
-const popupProfileValidate = new FormValidator(ValidationConfig, popupFormProfile);
-const popupCardValidate = new FormValidator(ValidationConfig, popupFormCard);
+const popupProfileValidate = new FormValidator(validationConfig, popupFormProfile);
+const popupCardValidate = new FormValidator(validationConfig, popupFormCard);
 popupProfileValidate.enableValidation();
 popupCardValidate.enableValidation();
