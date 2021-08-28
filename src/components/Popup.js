@@ -7,16 +7,12 @@ export class Popup {
     open(evt) {
         this._popup.classList.add('popup_opened');
         this._setEventListeners(evt);
-        this._popup.addEventListener('keydown', (evt) => {
-            this._handleEscClose(evt);
-        });
+        this._popup.addEventListener('keydown', (this._handleEscClose(evt)));
     }
 
-    close() {
+    close(evt) {
         this._popup.classList.remove('popup_opened');
-        this._popup.removeEventListener('keydown', (evt) => {
-            this._handleEscClose(evt);
-        });
+        this._popup.removeEventListener('keydown', this._handleEscClose(evt));
     }
 
     _handleEscClose(evt) {
@@ -30,7 +26,7 @@ export class Popup {
             if ((evt.target.classList.contains('popup')) ||
             (evt.target.classList.contains('popup__close-icon')))
             {
-                this.close();
+                this.close(evt);
             }
         });
     }

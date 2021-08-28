@@ -26,14 +26,15 @@ const popupWithCard = new PopupWithForm({submitForm: (item) => {cardRenderer(ite
 
 //функция вставки данных в форму редактирования профиля
 const userInfo = new UserInfo(popupName, popupText);
-profileButton.addEventListener('click', () => {
-  popupWithForm.open();
+profileButton.addEventListener('click', (evt) => {
+  popupWithForm.open(evt);
   userInfo.getUserInfo();
 })
 
 //функция открытия попапа
-cardButton.addEventListener('click', () => {
-  popupWithCard.open();
+cardButton.addEventListener('click', (evt) => {
+  popupWithCard.open(evt);
+  popupCardValidate.toggleButtonState();
 })
 
 //функция открытия попапа редактирования профиля
