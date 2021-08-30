@@ -9,6 +9,8 @@ import { PopupWithImage } from '../components/PopupWithImage.js';
 import { validationConfig, popupFullImage, popupImage, popupProfile, popupCard, profileButton, cardButton,
   popupFormProfile, popupFormCard, popupName, popupText, cardsGrid, fullName } from '../utils/constants.js';
 
+
+//функция открытия картинки
 const openImage = new PopupWithImage(popupImage, popupFullImage, fullName);
 function cardRenderer (item){
 const card = new Card(openImage, item, '.new-card');
@@ -18,11 +20,15 @@ section.addItem(generateCard);
 
 //рендер карточек
 const section = new Section({items: initialCards, renderer: (item) => {cardRenderer(item)}}, cardsGrid);
-
 section.renderItems();
 
-//фукнция открытия открытия попапа редактирования карточки
+//функция открытия открытия попапа редактирования карточки
 const popupWithCard = new PopupWithForm({submitForm: (item) => {cardRenderer(item)}}, popupCard);
+//функция открытия попапа редактирования профиля
+const popupWithForm = new PopupWithForm({ submitForm: () => userInfo.setUserInfo() }, popupProfile);
+popupWithCard.setEventListeners();
+popupWithForm.setEventListeners();
+openImage.setEventListeners();
 
 //функция вставки данных в форму редактирования профиля
 const userInfo = new UserInfo(popupName, popupText);
@@ -37,14 +43,7 @@ cardButton.addEventListener('click', (evt) => {
   popupCardValidate.toggleButtonState();
 })
 
-//функция открытия попапа редактирования профиля
-const popupWithForm = new PopupWithForm({ submitForm: () => userInfo.setUserInfo() }, popupProfile);
-
-
-popupWithCard.setEventListeners();
-popupWithForm.setEventListeners();
-
-
+//валидация
 const popupProfileValidate = new FormValidator(validationConfig, popupFormProfile);
 const popupCardValidate = new FormValidator(validationConfig, popupFormCard);
 popupProfileValidate.enableValidation();

@@ -35,8 +35,8 @@ export class Card {
         this._element.querySelector('.cards-grid__trash-bin').addEventListener('click', () => {
             this._deleteCard();
         });
-        this._element.querySelector('.cards-grid__image').addEventListener('click', (evt) => {
-            this._openFullImage.open({name: this._text, link: this._image}, evt);
+        this._element.querySelector('.cards-grid__image').addEventListener('click', () => {
+            this._openFullImage.open({name: this._text, link: this._image});
         });
     }
 
