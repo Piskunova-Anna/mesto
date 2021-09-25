@@ -8,7 +8,7 @@ import { PopupWithImage } from '../components/PopupWithImage.js';
 import {
   validationConfig, popupFullImage, popupImage, popupProfile, popupCard, profileButton, cardButton,
   popupFormProfile, popupFormCard, popupName, popupText, cardsGrid, fullName, avatar,
-  popupAvatar, popupDelete
+  popupAvatar, popupDelete, buttonProfile, buttonCard, buttonDelete, buttonAvatar
 } from '../utils/constants.js';
 import { Api } from '../components/Api.js';
 import { PopupDeleteCard } from '../components/PopupDeleteCard.js';
@@ -31,6 +31,7 @@ const userInfo = new UserInfo(popupName, popupText, { id: (res) => res._id });
 //функция открытия открытия попапа редактирования карточки
 const popupWithCard = new PopupWithForm({
   submitForm: (res) => {
+    buttonCard.textContent = 'Создание';
     newApi.getNewCard(res.name, res.link)
       .then((result) => {
         const cardRenderer = cardRenderer(result.name, result.link);
@@ -39,11 +40,13 @@ const popupWithCard = new PopupWithForm({
       .catch((err) => {
         console.log(err);
       })
+      .finally(() => { buttonCard.textContent = 'Создать' })
   }
 }, popupCard);
 //функция открытия попапа редактирования профиля
 const popupWithForm = new PopupWithForm({
   submitForm: (res) => {
+    buttonProfile.textContent = 'Сохранение...'
     newApi.getNewProfile(res.name, res.text)
       .then((result) => {
         userInfo.setUserInfo(result.name, result.about, result._id);
@@ -52,11 +55,13 @@ const popupWithForm = new PopupWithForm({
       .catch((error) => {
         console.log(error);
       })
+      .finally(() => { buttonProfile.textContent = 'Сохранить' })
   }
 }, popupProfile);
 
 const popupWithAvatar = new PopupWithForm({
   submitForm: (res) => {
+    buttonAvatar.textContent = 'Сохранение...'
     newApi.getAvatar(res.avatar)
       .then((result) => {
         userInfo.setUserAvatar(result.avatar)
@@ -65,6 +70,7 @@ const popupWithAvatar = new PopupWithForm({
       .catch((error) => {
         console.log(error);
       })
+      .finally(() => { buttonAvatar.textContent = 'Сохранить' })
   }
 }, popupAvatar)
 
@@ -92,12 +98,14 @@ function cardRenderer(res) {
       handleDeleteCard: (res) => {
         Card.open({
           deleteForm: () => {
+            buttonDelete.textContent = 'Удаление...'
             newApi.getDeleteCard(res._id)
               .then((res) => {
                 card.deleteCard(res);
                 popupDeleteCard.close();
               })
-              .catch((err) => console.log(err));
+              .catch((err) => console.log(err))
+              .finally(() => { buttonDelete.textContent = 'Да' })
           }
         })
       }

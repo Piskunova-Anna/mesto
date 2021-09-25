@@ -1,7 +1,7 @@
 export {
     validationConfig, popupFullImage, popupImage, popupProfile, popupCard, profileName, profileText,
     profileButton, cardButton, popupFormProfile, popupFormCard, popupName, popupText, cardsGrid, fullName,
-    profileKusto, avatar, popupAvatar, popupDelete
+    profileKusto, avatar, popupAvatar, popupDelete, buttonProfile, buttonCard, buttonDelete, buttonAvatar
 }
 const validationConfig = {
     formSelector: '.popup__form',
@@ -30,3 +30,7 @@ const profileKusto = document.querySelector('.profile__kusto');
 const avatar = document.querySelector('.profile__kusto');
 const popupAvatar = document.querySelector('.popup__avatar');
 const popupDelete = document.querySelector('.popup__delete');
+const buttonProfile = document.querySelector('.popup__button_profile');
+const buttonCard = document.querySelector('.popup__button_card');
+const buttonDelete = document.querySelector('.popup__button_delete');
+const buttonAvatar = document.querySelector('.popup__button_avatar');
