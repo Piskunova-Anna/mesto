@@ -3,6 +3,7 @@
     height: 120px;
     border-radius: 100px;
     align-self: center;
+    transition: opacity .5s linear 0s;
 }
 
 @media screen and (min-width: 550px) and (max-width: 680px) {
@@ -10,4 +11,9 @@
         width: 80px;
         height: 80px;
     }
+}
+
+.profile__kusto:hover {
+    cursor: url('../../../images/cursor.svg'), auto;
+    opacity: .8;
 }

@@ -1,15 +1,14 @@
 export class Section {
-    constructor({ items, renderer }, cardsContainer) {
-        this._items = items;
+    constructor({ renderer }, cardsContainer) {
         this._renderer = renderer;
         this._cardsGrid = cardsContainer;
     }
 
     addItem(element) {
-        this._cardsGrid.prepend(element);
+        this._cardsGrid.append(element);
     }
 
-    renderItems() {
-        this._items.forEach(item => this._renderer(item));
+    renderItems({ items }) {
+        items.forEach(item => this._renderer(item));
     }
 }

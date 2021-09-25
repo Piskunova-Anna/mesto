@@ -9,6 +9,7 @@
     border-width: 0;
     cursor: pointer;
     transition: opacity .5s linear 0s;
+    display: none;
 }
 
 .cards-grid__trash-bin:hover {

@@ -1,0 +1,8 @@
+.cards-grid__like_num {
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 16px;
+    min-width: 10px;
+    color: #000;
+}
