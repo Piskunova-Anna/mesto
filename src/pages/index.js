@@ -8,7 +8,8 @@ import { PopupWithImage } from '../components/PopupWithImage.js';
 import {
   validationConfig, popupFullImage, popupImage, popupProfile, popupCard, profileButton, cardButton,
   popupFormProfile, popupFormCard, popupName, popupText, cardsGrid, fullName, avatar,
-  popupAvatar, popupDelete, buttonProfile, buttonCard, buttonDelete, buttonAvatar
+  popupAvatar, popupDelete, buttonProfile, buttonCard, buttonDelete, buttonAvatar, profileKusto,
+  profileName, profileText
 } from '../utils/constants.js';
 import { Api } from '../components/Api.js';
 import { PopupDeleteCard } from '../components/PopupDeleteCard.js';
@@ -27,22 +28,23 @@ const newApi = new Api({
 const section = new Section({ renderer: (item) => { cardRenderer(item) } }, cardsGrid);
 //функция открытия картинки
 const openImage = new PopupWithImage(popupImage, popupFullImage, fullName);
-const userInfo = new UserInfo(popupName, popupText, { id: (res) => res._id });
+const userInfo = new UserInfo(profileName, profileText, profileKusto);
 //функция открытия открытия попапа редактирования карточки
 const popupWithCard = new PopupWithForm({
   submitForm: (res) => {
-    buttonCard.textContent = 'Создание';
+    buttonCard.textContent = 'Создание...';
     newApi.getNewCard(res.name, res.link)
       .then((result) => {
-        const cardRenderer = cardRenderer(result.name, result.link);
-        section.addItem(cardRenderer);
+        const cardRender = cardRenderer(result);
+        section.addItem(cardRender);
+        popupWithCard.close();
       })
       .catch((err) => {
         console.log(err);
       })
       .finally(() => { buttonCard.textContent = 'Создать' })
   }
-}, popupCard);
+}, popupCard);//при создании карточек ошибок нет
 //функция открытия попапа редактирования профиля
 const popupWithForm = new PopupWithForm({
   submitForm: (res) => {
@@ -96,7 +98,7 @@ function cardRenderer(res) {
         }
       },
       handleDeleteCard: (res) => {
-        Card.open({
+        popupDeleteCard.open({
           deleteForm: () => {
             buttonDelete.textContent = 'Удаление...'
             newApi.getDeleteCard(res._id)
@@ -105,7 +107,7 @@ function cardRenderer(res) {
                 popupDeleteCard.close();
               })
               .catch((err) => console.log(err))
-              .finally(() => { buttonDelete.textContent = 'Да' })
+              .finally(() => { buttonDelete.textContent = 'Да' })//карточка удалется, ошибок нет
           }
         })
       }
@@ -124,25 +126,22 @@ cardButton.addEventListener('click', (evt) => {
 
 profileButton.addEventListener('click', (evt) => {
   popupWithForm.open(evt);
-  userInfo.getUserInfo();
+  popupProfileValidate.toggleButtonState();
+  const getUserInfo = userInfo.getUserInfo();
+  popupName.value = getUserInfo.name;
+  popupText.value = getUserInfo.about;
 })
 
 avatar.addEventListener('click', (evt) => {
   popupWithAvatar.open(evt);
+  popupAvatarValidate.toggleButtonState();
 })
 
-newApi.getInitialCards()
-  .then((result) => {
-    section.renderItems({ items: result });
-  })
-  .catch((err) => {
-    console.log(err);
-  })
-
-newApi.getinitialProfile()
-  .then((result) => {
-    userInfo.setUserInfo(result.name, result.about, result._id);
-    userInfo.setUserAvatar(result.avatar);
+Promise.all([newApi.getInitialProfile(), newApi.getInitialCards()])
+  .then(([profile, items]) => {
+    userInfo.setUserInfo(profile.name, profile.about, profile._id);
+    userInfo.setUserAvatar(profile.avatar);
+    section.renderItems(items);
   })
   .catch((err) => {
     console.log(err);

@@ -25,6 +25,9 @@ export class Card {
 
     generateCard() {
         this._element = this._getTemplate();
+        this._cardImage = this._element.querySelector('.cards-grid__image');
+        this._cardLikeImg = this._element.querySelector('.cards-grid__like_img');
+        this._cardLikeNum = this._element.querySelector('.cards-grid__like_num');
         this._setEventListeners();
 
         if (this._userId == this._likeId) {
@@ -32,13 +35,13 @@ export class Card {
         }
         this._likes.forEach((like) => {
             if (like._id == this._likeId) {
-                this._element.querySelector('.cards-grid__like_img').classList.add('cards-grid__like_active');
+                this._cardLikeImg.classList.add('cards-grid__like_active');
             }
         })
-        this._element.querySelector('.cards-grid__image').src = this._image;
-        this._element.querySelector('.cards-grid__image').alt = this._alt;
+        this._cardImage.src = this._image;
+        this._cardImage.alt = this._alt;
         this._element.querySelector('.cards-grid__text').textContent = this._text;
-        this._element.querySelector('.cards-grid__like_num').textContent = this._likes.length;
+        this._cardLikeNum.textContent = this._likes.length;
         this._element._id = this._id;
         return this._element;
     }
@@ -56,9 +59,8 @@ export class Card {
     }
 
     like(res) {
-        this._element.querySelector('.cards-grid__like_img').classList.toggle('cards-grid__like_active');
-        this._element.querySelector('.cards-grid__like_num').textContent = res.likes.length;
-
+        this._cardLikeImg.classList.toggle('cards-grid__like_active');
+        this._cardLikeNum.textContent = res.likes.length;
     }
 
     deleteCard() {

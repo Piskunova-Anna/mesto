@@ -1,26 +1,25 @@
-import { profileName, profileText, profileKusto } from '../utils/constants.js';
-
 export class UserInfo {
-    constructor(name, info) {
+    constructor(name, info, avatar) {
         this._name = name;
         this._info = info;
+        this._avatar = avatar;
     }
 
     getUserInfo() {
-        this._name.value = profileName.textContent;
-        this._info.value = profileText.textContent;
+        const name = this._name.textContent;
+        const about = this._info.textContent;
         const userId = this._userId;
-        return (userId);
+        return { name, about, userId };
     }
 
     setUserInfo(name, about, userId) {
-        profileName.textContent = name;
-        profileText.textContent = about;
+        this._name.textContent = name;
+        this._info.textContent = about;
         this._userId = userId;
     }
 
     setUserAvatar(avatar) {
-        profileKusto.src = avatar;
+        this._avatar.src = avatar;
     }
 
     setUserId() {

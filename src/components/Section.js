@@ -8,7 +8,7 @@ export class Section {
         this._cardsGrid.append(element);
     }
 
-    renderItems({ items }) {
+    renderItems(items) {
         items.forEach(item => this._renderer(item));
     }
 }

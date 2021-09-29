@@ -8,10 +8,11 @@ export class FormValidator {
         this._errorClass = config.errorClass;
         this._errorOrigin = config.errorOrigin;
         this._formElement = formElement;
-        this._formList = Array.from(document.querySelectorAll(this._formSelector));
+        this._formList = Array.from(document.querySelector(this._formSelector));
         this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
         this._submitButton = this._formElement.querySelector(this._submitButtonSelector);
     }
+
     enableValidation() {
         this._formList.forEach(() => {
             this._formElement.addEventListener('submit', (evt) => {
