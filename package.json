@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Piskunova-Anna/mesto/issues"
   },
-  "homepage": "https://github.com/Piskunova-Anna/mesto#readme",
+  "homepage": "https://github.com/Piskunova-Anna/mesto/src/index.html",
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
