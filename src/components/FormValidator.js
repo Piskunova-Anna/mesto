@@ -1,6 +1,6 @@
 export class FormValidator {
     constructor(config, formElement) {
-        this._formSelector = config.formSelector;
+        this._formSelector = config.formSelector;//и это тоже?
         this._inputSelector = config.inputSelector;
         this._submitButtonSelector = config.submitButtonSelector;
         this._inactiveButtonClass = config.inactiveButtonClass;
@@ -8,13 +8,12 @@ export class FormValidator {
         this._errorClass = config.errorClass;
         this._errorOrigin = config.errorOrigin;
         this._formElement = formElement;
-        this._formList = Array.from(document.querySelector(this._formSelector));
         this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
         this._submitButton = this._formElement.querySelector(this._submitButtonSelector);
     }
 
     enableValidation() {
-        this._formList.forEach(() => {
+        this._formSelector.forEach(() => {//или это свойство вообще можно удалить?
             this._formElement.addEventListener('submit', (evt) => {
                 evt.preventDefault;
             });

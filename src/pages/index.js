@@ -36,7 +36,7 @@ const popupWithCard = new PopupWithForm({
     newApi.getNewCard(res.name, res.link)
       .then((result) => {
         const cardRender = cardRenderer(result);
-        section.addItem(cardRender);
+        section.prependItem(cardRender);
         popupWithCard.close();
       })
       .catch((err) => {

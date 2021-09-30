@@ -4,6 +4,10 @@ export class Section {
         this._cardsGrid = cardsContainer;
     }
 
+    prependItem(element) {
+        this._cardsGrid.prepend(element);
+    }
+
     addItem(element) {
         this._cardsGrid.append(element);
     }
