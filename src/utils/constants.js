@@ -4,7 +4,6 @@ export {
     profileKusto, avatar, popupAvatar, popupDelete, buttonProfile, buttonCard, buttonDelete, buttonAvatar
 }
 const validationConfig = {
-    formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button',
     inactiveButtonClass: 'popup__button_disabled',

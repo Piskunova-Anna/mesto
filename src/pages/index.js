@@ -44,7 +44,7 @@ const popupWithCard = new PopupWithForm({
       })
       .finally(() => { buttonCard.textContent = 'Создать' })
   }
-}, popupCard);//при создании карточек ошибок нет
+}, popupCard);//не понимаю, при создании светится undefined, хотя данные подгружаются
 //функция открытия попапа редактирования профиля
 const popupWithForm = new PopupWithForm({
   submitForm: (res) => {
@@ -80,7 +80,6 @@ function cardRenderer(res) {
   const card = new Card(openImage,
     {
       data: res,
-      /*owner: res.owner,*/
       handleClickLike: (res) => {
         if (res.querySelector('.cards-grid__like_img').classList.contains('cards-grid__like_active')) {
           newApi.getDeleteLike(res._id)
@@ -107,14 +106,14 @@ function cardRenderer(res) {
                 popupDeleteCard.close();
               })
               .catch((err) => console.log(err))
-              .finally(() => { buttonDelete.textContent = 'Да' })//карточка удалется, ошибок нет
+              .finally(() => { buttonDelete.textContent = 'Да' })
           }
         })
       }
     }, '.new-card', userInfo.setUserId());
-  const generateCard = card.generateCard();
+    const generateCard = card.generateCard(res);
   section.addItem(generateCard);
-}
+}//не понимаю
 
 const popupDeleteCard = new PopupDeleteCard(popupDelete)
 
