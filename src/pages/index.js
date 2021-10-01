@@ -25,7 +25,12 @@ const newApi = new Api({
 });
 
 //рендер карточек
-const section = new Section({ renderer: (item) => { cardRenderer(item) } }, cardsGrid);
+const section = new Section({
+  renderer: (item) => {
+    const generateCard = newCard(item);
+    section.addItem(generateCard);
+  }
+}, cardsGrid);
 //функция открытия картинки
 const openImage = new PopupWithImage(popupImage, popupFullImage, fullName);
 const userInfo = new UserInfo(profileName, profileText, profileKusto);
@@ -35,7 +40,7 @@ const popupWithCard = new PopupWithForm({
     buttonCard.textContent = 'Создание...';
     newApi.getNewCard(res.name, res.link)
       .then((result) => {
-        const cardRender = cardRenderer(result);
+        const cardRender = newCard(result);
         section.prependItem(cardRender);
         popupWithCard.close();
       })
@@ -44,7 +49,7 @@ const popupWithCard = new PopupWithForm({
       })
       .finally(() => { buttonCard.textContent = 'Создать' })
   }
-}, popupCard);//не понимаю, при создании светится undefined, хотя данные подгружаются
+}, popupCard);
 //функция открытия попапа редактирования профиля
 const popupWithForm = new PopupWithForm({
   submitForm: (res) => {
@@ -76,7 +81,7 @@ const popupWithAvatar = new PopupWithForm({
   }
 }, popupAvatar)
 
-function cardRenderer(res) {
+function newCard(res) {
   const card = new Card(openImage,
     {
       data: res,
@@ -111,9 +116,9 @@ function cardRenderer(res) {
         })
       }
     }, '.new-card', userInfo.setUserId());
-    const generateCard = card.generateCard(res);
-  section.addItem(generateCard);
-}//не понимаю
+  const generateCard = card.generateCard(res);
+  return generateCard;
+}
 
 const popupDeleteCard = new PopupDeleteCard(popupDelete)
 
